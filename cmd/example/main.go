@@ -1,11 +1,3 @@
-# go-circular-queue
-go-circular-queue는 thread safety한 generic circular queue 입니다.
-# 패키지 설치
-```
-$ go get github.com/swkwon/go-circular-queue@latest
-```
-# 시작하기
-```
 package main
 
 import (
@@ -56,16 +48,3 @@ func main() {
 	log.Println("pop: ", ret, err)
 	log.Println(q.View())
 }
-```
-```
-    cqueue.MakeQueue[int](3)
-```
-queue를 만듭니다. `[*Job]`는 큐의 데이터타입입니다. int 형의 데이터가 보관됩니다. `(3)`은 큐의 크기를 나타냅니다. 
-```
-q.Push(1)
-```
-`Push` 메서드를 이용하여 큐의 컨테이너에 데이터를 보관합니다. 오버플로우 시 error를 리턴합니다.
-```
-ret, err = q.Pop()
-```
-맨앞의 데이터를 꺼내기 위해서 `Pop` 메서드를 호출합니다. 비어있는 큐일 경우 error를 리턴합니다.
