@@ -7,7 +7,7 @@ import (
 )
 
 func TestGQueue(t *testing.T) {
-	q := MakeQueue[int](10)
+	q := New[int](10)
 	for i := 0; i <= 10; i++ {
 		err := q.Push(i)
 		log.Println(fmt.Sprintf("i=%d", i), err)

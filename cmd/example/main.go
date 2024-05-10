@@ -23,7 +23,7 @@ func (j *Job) String() string {
 }
 
 func main() {
-	q := cqueue.MakeQueue[*Job](3)
+	q := cqueue.New[*Job](3)
 	var ret *Job
 	var err error
 	err = q.Push(&Job{Name: "one", ID: 1})

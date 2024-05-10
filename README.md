@@ -31,7 +31,7 @@ func (j *Job) String() string {
 }
 
 func main() {
-	q := cqueue.MakeQueue[*Job](3)
+	q := cqueue.New[*Job](3)
 	var ret *Job
 	var err error
 	err = q.Push(&Job{Name: "one", ID: 1})
@@ -58,7 +58,7 @@ func main() {
 }
 ```
 ```
-    cqueue.MakeQueue[int](3)
+    cqueue.New[int](3)
 ```
 queue를 만듭니다. `[*Job]`는 큐의 데이터타입입니다. int 형의 데이터가 보관됩니다. `(3)`은 큐의 크기를 나타냅니다. 
 ```

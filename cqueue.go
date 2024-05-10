@@ -19,9 +19,9 @@ type CQueue[T any] struct {
 	mutex     *sync.Mutex
 }
 
-// MakeQueue is a generic function that creates a circular queue.
+// New is a generic function that creates a circular queue.
 // The parameter sets the size of the queue.
-func MakeQueue[T any](size int) *CQueue[T] {
+func New[T any](size int) *CQueue[T] {
 	if size <= 0 {
 		size = 100
 	}
